@@ -1,0 +1,154 @@
+:root {
+  --offwhite: #FCF6F5;
+  --charcoal: #2C2E39;
+  --teal: #26C6DA;
+  --red: #F44336;
+  --coffee: #6F4E37;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--offwhite);
+  color: var(--charcoal);
+}
+
+/* Navbar */
+nav {
+  background: linear-gradient(90deg, var(--teal), var(--red));
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: var(--offwhite);
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, var(--teal), var(--red));
+  color: white;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+/* Search */
+.search-container {
+  text-align: center;
+  margin: 30px auto;
+}
+
+.search-bar {
+  width: 60%;
+  max-width: 600px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.filter-select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.item {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.item:hover {
+  transform: translateY(-5px);
+}
+
+.thumb {
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  background: var(--teal);
+  color: white;
+}
+
+.content {
+  padding: 15px;
+}
+
+.name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.desc {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.download {
+  display: block;
+  background: var(--teal);
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin: 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.download:hover {
+  background: var(--red);
+}
+
+/* Footer */
+footer {
+background: linear-gradient(135deg, var(--teal), var(--red));
+  color: white;
+  text-align: center;
+  padding: 25px 10px;
+  margin-top: 60px;
+}
