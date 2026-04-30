@@ -1,100 +1,447 @@
-<!DOCTYPE html>
-<html lang="en">
+ <!DOCTYPE html>
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Polytechnic Notes and PYQs — Padoge toh hi banoge</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>DiplomaSathi — Polytechnic Notes & PYQs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+<link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav>
-    <div class="logo">Polytechnic Notes</div>
-    <ul>
+
+<!-- Mesh Background -->
+<div class="mesh-bg" aria-hidden="true">
+  <div class="mesh-orb"></div>
+  <div class="mesh-orb"></div>
+  <div class="mesh-orb"></div>
+  <div class="mesh-orb"></div>
+</div>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav class="navbar" id="nav" role="banner">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#" aria-label="DiplomaSathi home">
+      <div class="nav-brand-icon" aria-hidden="true">📘</div>
+      Diploma<span>Sathi</span>
+    </a>
+    <ul class="nav-links" id="navLinks" role="navigation" aria-label="Main navigation">
       <li><a href="#pyqs">PYQs</a></li>
       <li><a href="#media">Media</a></li>
-      <li><a href="#Updat">Update</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#update">Update</a></li>
+      <li><a href="#contact" aria-label="Open Contact Us panel">Contact</a></li>
     </ul>
-  </nav>
-
-  <!-- Header -->
-  <header>
-  <h1>Polytechnic Notes and PYQs</h1>
-    <p>Padoge toh hi banoge — Focused notes and one-click downloads</p>
-  </header>
-
-  <!-- Search -->
-  <div class="search-container">
-    <input type="text" id="searchInput" class="search-bar" placeholder="Search PYQs by subject, year, or topic...">
+    <div class="nav-actions">
+      <button class="nav-pill-btn" id="darkBtn" aria-label="Toggle dark mode">🌙</button>
+      <button class="nav-admin-btn" id="openLoginBtn" aria-label="Open admin login"> Admin</button>
+      <button class="ham" id="ham" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </div>
   </div>
+</nav>
 
-  <!-- Main Content -->
-  <main class="container">
-    <section id="pyqs">
-      <h2>📘 Previous Year Questions</h2>
-      <div class="filters">
-        <select id="yearFilter" class="filter-select">
-          <option value="">PYQ year</option> 
-          <option value="2024">2024</option>
-          <option value="2023">2023</option>
+<!-- ═══ HERO ═══ -->
+<header class="hero" role="banner">
+  <h1>Polytechnic Notes<br/>and <span class="grad">PYQs</span></h1>
+  <p class="hero-sub">Padoge toh hi banoge — Focused notes and one-click downloads for every branch.</p>
+  <div class="hero-stats" role="list" aria-label="Site statistics">
+    <div class="hero-stat" role="listitem">
+      <div class="hero-stat-val">500+</div>
+      <div class="hero-stat-lbl">Documents</div>
+    </div>
+    <div class="hero-divider" aria-hidden="true"></div>
+    <div class="hero-stat" role="listitem">
+      <div class="hero-stat-val">100%</div>
+      <div class="hero-stat-lbl">Free</div>
+    </div>
+    <div class="hero-divider" aria-hidden="true"></div>
+    <div class="hero-stat" role="listitem">
+      <div class="hero-stat-val">6</div>
+      <div class="hero-stat-lbl">Branches</div>
+    </div>
+  </div>
+</header>
 
-        </select>
-        <select id="yearFilter" class="filter-select">
-          <option value="">Semester </option> 
-          <option value="Ist">Ist</option>
-          <option value="IInd">IInd</option>
+<!-- ═══ CONTROLS ═══ -->
+<div class="controls-wrap" id="pyqs">
+  <div class="search-glass" role="search">
+    <div class="search-field">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="q" class="search-input" placeholder="Search PYQs by subject, year, or topic…" autocomplete="off" aria-label="Search materials"/>
+    </div>
+    <div class="filter-selects">
+      <select id="fYear" class="glass-select" aria-label="Filter by year">
+        <option value="">PYQ Year</option>
+        <option value="2024">2024</option>
+        <option value="2023">2023</option>
+        <option value="2022">2022</option>
+        <option value="2021">2021</option>
+      </select>
+      <select id="fSem" class="glass-select" aria-label="Filter by semester">
+        <option value="">Semester</option>
+        <option value="1">Ist</option><option value="2">IInd</option>
+        <option value="3">IIIrd</option><option value="4">IVth</option>
+        <option value="5">Vth</option><option value="6">VIth</option>
+      </select>
+      <select id="fBranch" class="glass-select" aria-label="Filter by branch">
+        <option value="">Branch</option>
+        <option value="all">All Branches</option>
+        <option value="electrical">Electrical</option>
+        <option value="electronics">Electronics</option>
+        <option value="cs">Computer Science</option>
+        <option value="mechanical">Mechanical</option>
+        <option value="civil">Civil</option>
+      </select>
+      <select id="fSort" class="glass-select" aria-label="Sort by">
+        <option value="default">Sort: Default</option>
+        <option value="newest">Newest First</option>
+        <option value="downloads">Most Downloaded</option>
+        <option value="az">A → Z</option>
+      </select>
+      <button class="btn-reset-glass" id="resetBtn" aria-label="Reset all filters">✕ Reset</button>
+    </div>
+  </div>
+</div>
 
-        </select>
-        <select id="BranchFilter" class="filter-select">
-          <option value=""> Branch</option>
-          <option value="Electrical Engineering">Electrical Engineering</option>
-          <option value="Electronics Engineering">Electronics Engineering</option>
-          <option value="Computer Science and Engineering">Computer Science and Engineering</option>
-          
-        </select>
+<!-- Results meta row -->
+<div class="results-meta">
+  <p class="results-count" id="resultsMeta" aria-live="polite"></p>
+</div>
+
+<!-- ═══ MAIN CARDS ═══ -->
+<main class="main" id="mainContent" role="main">
+  <p class="section-label" aria-hidden="true">Previous Year Questions</p>
+  <!-- Skeleton -->
+  <div class="skel-grid" id="skelGrid" aria-hidden="true">
+    <div class="skel"></div><div class="skel"></div><div class="skel"></div>
+    <div class="skel"></div><div class="skel"></div><div class="skel"></div>
+  </div>
+  <!-- Cards -->
+  <div class="cards-grid" id="cardsGrid" style="visibility:hidden" aria-label="Study materials"></div>
+  <!-- Empty -->
+  <div class="empty-state" id="emptyState" aria-live="polite">
+    <span class="empty-icon" aria-hidden="true">🔍</span>
+    <h3>No results found</h3>
+    <p>Try adjusting your search or filters to find what you're looking for.</p>
+    <button class="btn-reset-glass" onclick="document.getElementById('resetBtn').click()">Reset Filters</button>
+  </div>
+</main>
+
+<!-- ═══ PRE-FOOTER TAGLINE BANNER ═══ -->
+<div class="prefooter-banner">
+  <div class="prefooter-inner">
+    <div class="prefooter-eyebrow">✦ About DiplomaSathi</div>
+    <h3>Designed for <span class="grad">students</span>, by students.</h3>
+    <p>Free notes, PYQs, and study material for every Polytechnic branch — all in one place.</p>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<div class="footer-wrap">
+  <footer class="footer" role="contentinfo">
+
+    <!-- Brand + Credit + Social -->
+    <div class="footer-col-brand">
+      <div class="footer-brand-logo">
+        <div class="footer-brand-logo-icon" aria-hidden="true">📘</div>
+        Diploma<span>Sathi</span>
       </div>
-
-      <!-- Grid -->
-      <div class="grid" id="pyqGrid">
-        <div class="item" data-year="2024" data-subject="Electrical Engineering">
-          <div class="thumb pdf-thumb">📄</div>
-          <div class="content">
-            <div class="name">All Branch 1st Semester PYQ 2024</div>
-            <div class="desc">Complete question set for All branch.</div>
-          </div>
-          <a href="https://drive.google.com/uc?export=download&id=11Y13ML_ZeXeSe6mQZrUc6nPNvWuluG2E" class="download" target="_blank">Download Now</a>
-        </div>
-
-        <div class="item" data-year="2022" data-subject="Mechanical Engineering">
-          <div class="thumb pdf-thumb">📄</div>
-          <div class="content">
-            <div class="name">Mechanical Engineering PYQ 2022</div>
-            <div class="desc">Important PYQs for ME branch.</div>
-          </div>
-          <a href="https://drive.google.com/uc?export=download&id=11Y13ML_ZeXeSe6mQZrUc6nPNvWuluG2E" class="download" target="_blank">Download Now</a>
-        </div> 
-
-        <div class="item" data-year="2021" data-subject="Civil Engineering">
-          <div class="thumb pdf-thumb">📄</div>
-          <div class="content">
-            <div class="name">Physics I Imp Que By Sir</div>
-            <div class="desc">Past year paper collection for CE branch.</div>
-          </div>
-          <a href="https://drive.google.com/uc?export=download&id=11N3iyS5jf2bGe6rg8B-uUar3AsIsfPVF" class="download" target="_blank">Download Now</a>
-        </div>
+      <p class="footer-credit">
+        Developed by <strong>Vishal Sahu</strong>, CSE Student at
+        <strong>Govt. Polytechnic Madhogarh</strong>.
+      </p>
+      <div class="footer-social-row">
+        <a class="footer-portfolio-btn" href="#" target="_blank" rel="noopener" aria-label="Visit portfolio">
+          🌐 Portfolio
+        </a>
+        <a class="footer-ig-btn" href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+          📸 Instagram
+        </a>
       </div>
-    </section>
-  </main>
+    </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Polytechnic Notes. All rights reserved.</p>
-    <p>Designed for students, by students.</p>
+    <!-- Browse -->
+    <div class="footer-col-links">
+      <p class="footer-col-title">Browse</p>
+      <ul class="footer-link-list" role="list">
+        <li><a href="#pyqs">PYQ Papers</a></li>
+        <li><a href="#pyqs">Notes</a></li>
+        <li><a href="#pyqs">Syllabus</a></li>
+        <li><a href="#pyqs">All Branches</a></li>
+      </ul>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-col-links">
+      <p class="footer-col-title">Quick Links</p>
+      <ul class="footer-link-list" role="list">
+        <li><a href="https://bteup.ac.in/webapp/result.aspx" target="_blank" rel="noopener">BTEUP Results</a></li>
+        <li><a href="https://bteup.ac.in/webapp/syllabus.aspx" target="_blank" rel="noopener">Syllabus 2026</a></li>
+        <li><a href="https://bteup.ac.in" target="_blank" rel="noopener">BTEUP Official</a></li>
+        <li><a href="https://forms.gle/your-google-form-link-here" target="_blank" rel="noopener">Submit Notes</a></li>
+      </ul>
+    </div>
+
+    <!-- Stay In Touch -->
+    <div class="footer-col-links">
+      <p class="footer-col-title">Stay In Touch</p>
+      <ul class="footer-link-list" role="list">
+        <li><a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://youtube.com/" target="_blank" rel="noopener">YouTube</a></li>
+        <li><button class="contact-trigger footer-link-list a" id="footerContactBtn" aria-label="Open Contact Us panel">Contact Us</button></li>
+      </ul>
+    </div>
+
   </footer>
 
-  <script src="script.jss"></script>
+  <!-- Bottom copyright bar -->
+  <div class="footer-bottom">
+    <p class="footer-copy">
+      © 2025 <span>DiplomaSathi</span> — Polytechnic Notes. All rights reserved.
+    </p>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CONTACT US DRAWER ═══ -->
+<div class="contact-backdrop" id="contactBackdrop" aria-hidden="true"></div>
+<aside class="contact-drawer" id="contactDrawer" role="dialog" aria-modal="true" aria-labelledby="cdTitle">
+
+  <!-- Header -->
+  <div class="cd-head">
+    <div class="cd-head-left">
+      <div class="cd-head-icon" aria-hidden="true">✉️</div>
+      <div>
+        <div class="cd-head-title" id="cdTitle">Contact Us</div>
+        <div class="cd-head-sub">We reply within 24 hours</div>
+      </div>
+    </div>
+    <button class="cd-close" id="cdClose" aria-label="Close contact panel">✕</button>
+  </div>
+
+  <!-- Illustration strip -->
+  <div class="cd-illo" aria-hidden="true">
+    <svg viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg" fill="none">
+      <!-- Laptop -->
+      <rect x="12" y="38" width="46" height="4" rx="2" fill="rgba(0,212,255,0.3)"/>
+      <rect x="10" y="26" width="50" height="16" rx="4" fill="rgba(99,102,241,0.25)" stroke="rgba(99,102,241,0.4)" stroke-width="1"/>
+      <rect x="14" y="29" width="42" height="10" rx="2" fill="rgba(0,212,255,0.1)"/>
+      <rect x="17" y="31" width="18" height="2" rx="1" fill="rgba(0,212,255,0.6)"/>
+      <rect x="17" y="35" width="12" height="1.5" rx="1" fill="rgba(99,102,241,0.5)"/>
+      <!-- Person head -->
+      <circle cx="35" cy="16" r="8" fill="rgba(249,197,163,1)"/>
+      <path d="M27 14 Q27 6 35 5 Q43 4 44 12 Q44 7 41 6 Q39 2 35 2 Q30 2 28 6 Q26 9 27 14Z" fill="#1a1a2e"/>
+      <!-- Body -->
+      <ellipse cx="35" cy="30" rx="10" ry="8" fill="rgba(99,102,241,0.4)"/>
+      <!-- Arms -->
+      <path d="M25 28 Q18 32 20 40" stroke="rgba(99,102,241,0.5)" stroke-width="5" stroke-linecap="round"/>
+      <path d="M45 28 Q52 32 50 40" stroke="rgba(99,102,241,0.5)" stroke-width="5" stroke-linecap="round"/>
+      <!-- Smile -->
+      <path d="M32 20 Q35 23 38 20" stroke="#e8977a" stroke-width="1.5" stroke-linecap="round"/>
+      <!-- Eyes -->
+      <circle cx="32" cy="16" r="1.2" fill="#1a1a2e"/>
+      <circle cx="38" cy="16" r="1.2" fill="#1a1a2e"/>
+    </svg>
+    <div class="cd-illo-text">
+      <strong>Drop us a message!</strong>
+      Have a question, feedback, or want to submit notes? We're here to help every polytechnic student.
+    </div>
+  </div>
+
+  <!-- Form body -->
+  <div class="cd-body">
+    <div class="cd-row2">
+      <div>
+        <label class="cd-label" for="cdName">Your Name *</label>
+        <input class="cd-input" id="cdName" type="text" placeholder="e.g. Rahul Verma" autocomplete="name"/>
+      </div>
+      <div>
+        <label class="cd-label" for="cdEmail">Email Address *</label>
+        <input class="cd-input" id="cdEmail" type="email" placeholder="you@email.com" autocomplete="email"/>
+      </div>
+    </div>
+    <div>
+      <label class="cd-label" for="cdSubject">Subject</label>
+      <input class="cd-input" id="cdSubject" type="text" placeholder="e.g. Notes submission, Bug report…"/>
+    </div>
+    <div>
+      <label class="cd-label" for="cdMsg">Your Message *</label>
+      <textarea class="cd-textarea" id="cdMsg" placeholder="Write your message here…"></textarea>
+    </div>
+
+    <!-- Info cards -->
+    <div class="cd-info-cards">
+      <div class="cd-info-card">
+        <div class="cd-info-card-icon">📧</div>
+        <div class="cd-info-card-txt"><strong>Email Us</strong>techwithvishal1708@outlook.com</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer with Send button -->
+  <div class="cd-foot">
+    <button class="cd-send-btn" id="cdSendBtn" type="button">
+      <span>✉️</span> Send Message
+    </button>
+    <div class="cd-feedback" id="cdFeedback"></div>
+  </div>
+
+</aside>
+
+<!-- ═══ SCROLL TOP ═══ -->
+<button id="stb" aria-label="Scroll to top">↑</button>
+
+<!-- ════════════════════════════════════════
+     QUICK VIEW MODAL
+════════════════════════════════════════ -->
+<div class="modal-overlay" id="qvOverlay" role="dialog" aria-modal="true" aria-labelledby="qvTitle">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 class="modal-title" id="qvTitle">Quick View</h2>
+      <button class="modal-close" id="qvClose" aria-label="Close preview">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="mock-pdf" id="qvPdf" aria-label="Document preview">
+        <div class="pdf-header">
+          <div class="pdf-header-title" id="qvPdfTitle"></div>
+          <div class="pdf-header-sub" id="qvPdfSub"></div>
+        </div>
+        <div class="pdf-lines" id="qvPdfLines"></div>
+        <div class="pdf-watermark" aria-hidden="true">📄</div>
+      </div>
+      <div class="modal-info" id="qvInfo"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="modal-dl-btn" id="qvDownloadBtn">⬇ Download Now</button>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     LOGIN OVERLAY
+════════════════════════════════════════ -->
+<div class="login-overlay" id="loginOverlay" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+  <div class="login-box">
+    <button class="login-close" id="loginClose" aria-label="Close login">✕</button>
+    <div class="login-logo" aria-hidden="true">🔐</div>
+    <h2 id="loginTitle">Admin Login</h2>
+    <p>Enter credentials to manage materials</p>
+    <input class="login-input" type="text"     id="loginUser" placeholder="Username" autocomplete="off"/>
+    <input class="login-input" type="password" id="loginPass" placeholder="Password"/>
+    <button class="login-btn" id="loginBtn">Login →</button>
+    <div class="login-err" id="loginErr" role="alert">❌ Invalid credentials. Try again.</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     ADMIN PANEL OVERLAY
+════════════════════════════════════════ -->
+<div class="admin-overlay" id="adminOverlay" role="dialog" aria-modal="true" aria-labelledby="adminTitle">
+  <div class="admin-panel">
+    <div class="admin-head">
+      <div class="admin-head-title">
+        <span id="adminTitle">📋 Admin Panel</span>
+        <span class="admin-head-badge">Authenticated</span>
+      </div>
+      <button class="admin-close" id="adminClose" aria-label="Close admin panel">✕</button>
+    </div>
+    <div class="admin-body">
+      <div class="tab-row" role="tablist">
+        <button class="tab-btn active" id="tabBtnAdd"  role="tab" aria-selected="true"  onclick="showTab('add')">➕ Add Note</button>
+        <button class="tab-btn"        id="tabBtnList" role="tab" aria-selected="false" onclick="showTab('list')">📄 All Notes (<span id="notesCount">0</span>)</button>
+      </div>
+
+      <!-- ADD / EDIT FORM -->
+      <div class="form-section active" id="paneAdd" role="tabpanel">
+        <div class="form-grid">
+          <div class="form-group form-col-full">
+            <label class="form-label">Title *</label>
+            <input class="form-input" id="fTitle" type="text" placeholder="e.g. Electrical Engineering PYQ 2024"/>
+          </div>
+          <div class="form-group form-col-full">
+            <label class="form-label">Description</label>
+            <textarea class="form-textarea" id="fDesc" placeholder="Brief description of what this document covers..."></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Year *</label>
+            <select class="form-select" id="fYr">
+              <option value="">Select year</option>
+              <option>2024</option><option>2023</option><option>2022</option>
+              <option>2021</option><option>2020</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Semester *</label>
+            <select class="form-select" id="fSemF">
+              <option value="">Select semester</option>
+              <option value="1">Ist</option><option value="2">IInd</option>
+              <option value="3">IIIrd</option><option value="4">IVth</option>
+              <option value="5">Vth</option><option value="6">VIth</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Branch *</label>
+            <select class="form-select" id="fBranchF">
+              <option value="">Select branch</option>
+              <option value="all">All Branches</option>
+              <option value="electrical">Electrical Engineering</option>
+              <option value="electronics">Electronics Engineering</option>
+              <option value="cs">Computer Science</option>
+              <option value="mechanical">Mechanical Engineering</option>
+              <option value="civil">Civil Engineering</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Icon</label>
+            <select class="form-select" id="fIcon">
+              <option value="📄">📄 Document</option><option value="⚡">⚡ Electrical</option>
+              <option value="🔌">🔌 Electronics</option><option value="💻">💻 CS</option>
+              <option value="⚙️">⚙️ Mechanical</option><option value="🏗️">🏗️ Civil</option>
+              <option value="🔬">🔬 Physics / Chem</option><option value="🧮">🧮 Maths</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Social Badge</label>
+            <select class="form-select" id="fBadge">
+              <option value="none">None</option>
+              <option value="trend">🔥 Trending</option>
+              <option value="verified">✅ Verified</option>
+              <option value="downloads">⬇️ 1.2k Downloads</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Download Count (display)</label>
+            <input class="form-input" id="fDlCount" type="text" placeholder="e.g. 1.2k"/>
+          </div>
+          <div class="form-group form-col-full">
+            <label class="form-label">Google Drive Download Link *</label>
+            <input class="form-input" id="fLink" type="url" placeholder="https://drive.google.com/uc?export=download&id=..."/>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button class="btn-save" id="saveBtn">💾 Save Note</button>
+          <button class="btn-cancel-edit" id="cancelEditBtn" onclick="resetForm()">Cancel Edit</button>
+        </div>
+        <div class="form-feedback" id="formFeedback"></div>
+      </div>
+
+      <!-- LIST -->
+      <div class="form-section" id="paneList" role="tabpanel">
+        <div class="admin-notes-list" id="adminNotesList"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     JAVASCRIPT — MODULAR & PRODUCTION-READY
+═══════════════════════════════════════════ -->
+<script src="script.js"></script>
 </body>
 </html>
-
-
