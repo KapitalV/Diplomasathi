@@ -160,22 +160,38 @@
     return card;
   }
 
+  
   /* ─────────────────────────────────────────
      FILTER + SORT + RENDER
   ───────────────────────────────────────── */
   function getFilteredSorted() {
     const qv = norm($('q').value);
     const yr = $('fYear').value;
-    const sm = $('fSem').value;
+    const sm = $('fSem').value.toLowerCase(); // Convert to lowercase to catch "Even", "Odd", or "All"
     const br = $('fBranch').value;
     const sort = $('fSort').value;
 
-    let result = materials.filter(m => (
-      (!qv || (norm(m.title) + norm(m.desc) + norm(m.branch) + norm(m.year)).includes(qv)) &&
-      (!yr || m.year === yr) &&
-      (!sm || m.sem === sm) &&
-      (!br || m.branch === br)
-    ));
+    let result = materials.filter(m => {
+      // 1. Semester matching logic
+      let semMatch = false;
+      if (!sm || sm === 'all') {
+        semMatch = true; // Show everything if blank or "all"
+      } else if (sm === 'even') {
+        semMatch = ['2', '4', '6'].includes(String(m.sem));
+      } else if (sm === 'odd') {
+        semMatch = ['1', '3', '5'].includes(String(m.sem));
+      } else {
+        semMatch = String(m.sem) === sm; // Exact match (1, 2, 3, etc.)
+      }
+
+      // 2. Return true if all filters match
+      return (
+        (!qv || (norm(m.title) + norm(m.desc) + norm(m.branch) + norm(m.year)).includes(qv)) &&
+        (!yr || m.year === yr) &&
+        semMatch && // Apply the custom semester logic here
+        (!br || m.branch === br || br === 'all') // Added fallback for "all" branches just in case
+      );
+    });
 
     if (sort === 'newest')    result = [...result].sort((a, b) => Number(b.year) - Number(a.year));
     if (sort === 'downloads') result = [...result].sort((a, b) => (b.downloads||0) - (a.downloads||0));
