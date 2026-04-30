@@ -145,7 +145,12 @@
       </div>
       <div class="card-body">
         <div class="card-tags" aria-label="Tags">
-          <span class="card-tag">Sem ${semLabel(m.sem)}</span>
+        
+        const semLabel = s => {
+      if (s === 'even' || s === 'Even') return 'Even';
+      if (s === 'odd' || s === 'Odd') return 'Odd';
+     return SEM_LABELS[s] || s; 
+     };
           <span class="card-tag">${branchLabel(m.branch)}</span>
           ${m.dlCount ? `<span class="card-tag">↓ ${escHtml(m.dlCount)}</span>` : ''}
         </div>
