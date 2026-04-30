@@ -6,20 +6,28 @@
   ───────────────────────────────────────── */
   const DEFAULT_MATERIALS = [
     {
-      id: 1, icon: '📄', title: 'All Branch 1st Semester PYQ 2024',
-      desc: 'Complete question paper set for all diploma branches — Sem I.',
-      year: '2024', sem: '1', branch: 'all',
-      badge: 'trend', dlCount: '2.4k', downloads: 2400,
-      link: 'https://drive.google.com/uc?export=download&id=11Y13ML_ZeXeSe6mQZrUc6nPNvWuluG2E',
+      id: 1, icon: '📄', title: 'All Branch 2nd Semester PYQ 2025',
+      desc: 'Complete question paper set for all diploma branches — Sem II.',
+      year: '2025', sem: '2', branch: 'all',
+      badge: 'trend', dlCount: '224', downloads: 224,
+      link: 'https://drive.google.com/uc?export=download&id=1blqZ71flbzri37axO_h0pXUtOkwJ5Sxe',
       color: 'linear-gradient(135deg,#0ea5e9,#6366f1)'
     },
     {
-      id: 2, icon: '⚙️', title: 'Mechanical Engineering PYQ 2022',
-      desc: 'Important past year papers for ME branch, 3rd semester.',
-      year: '2022', sem: '3', branch: 'mechanical',
+      id: 2, icon: '⚙️', title: 'Even Semester Exam Scheme May 2026',
+      desc: 'Even Semester Exam Scheme May 2026 updated 28/04/2026. as BTEUP Portal',
+      year: '2026', sem: 'even', branch: 'All',
       badge: 'verified', dlCount: '980', downloads: 980,
-      link: 'https://drive.google.com/uc?export=download&id=11Y13ML_ZeXeSe6mQZrUc6nPNvWuluG2E',
+      link: 'https://drive.google.com/uc?export=download&id=14-349hXv_IwV0h6NpKJmel0Vptdp2mPk',
       color: 'linear-gradient(135deg,#f59e0b,#ef4444)'
+    },
+    {
+      id: 4, icon: '💻', title: 'Even Semester B & OPB Exam Scheme May 2026',
+      desc: 'Exam Scheme May B & OPB updated 28/04/2026 as BTEUP Portal.',
+      year: '2026', sem: 'even', branch: 'all',
+      badge: 'trend', dlCount: '3.1k', downloads: 3100,
+      link: 'https://drive.google.com/uc?export=download&id=112YsazQiy8avWRTR9EleUa5K9Mvu4wSs',
+      color: 'linear-gradient(135deg,#8b5cf6,#06b6d4)'
     },
     {
       id: 3, icon: '🔬', title: 'Physics I Important Questions by Sir',
@@ -28,14 +36,6 @@
       badge: 'downloads', dlCount: '1.2k', downloads: 1200,
       link: 'https://drive.google.com/uc?export=download&id=11N3iyS5jf2bGe6rg8B-uUar3AsIsfPVF',
       color: 'linear-gradient(135deg,#10b981,#0ea5e9)'
-    },
-    {
-      id: 4, icon: '💻', title: 'Computer Science PYQ 2024',
-      desc: 'CS branch Semester II — includes DS, OS, and Networking questions.',
-      year: '2024', sem: '2', branch: 'cs',
-      badge: 'trend', dlCount: '3.1k', downloads: 3100,
-      link: 'https://drive.google.com/uc?export=download&id=11Y13ML_ZeXeSe6mQZrUc6nPNvWuluG2E',
-      color: 'linear-gradient(135deg,#8b5cf6,#06b6d4)'
     },
     {
       id: 5, icon: '⚡', title: 'Electrical Engineering PYQ 2023',
