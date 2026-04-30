@@ -16,7 +16,7 @@
     {
       id: 2, icon: '⚙️', title: 'Even Semester Exam Scheme May 2026',
       desc: 'Even Semester Exam Scheme May 2026 updated 28/04/2026. as BTEUP Portal',
-      year: '2026', sem: '8', branch: 'All',
+      year: '2026', sem: 'Even', branch: 'All',
       badge: 'verified', dlCount: '980', downloads: 980,
       link: 'https://drive.google.com/uc?export=download&id=14-349hXv_IwV0h6NpKJmel0Vptdp2mPk',
       color: 'linear-gradient(135deg,#f59e0b,#ef4444)'
@@ -24,7 +24,7 @@
     {
       id: 4, icon: '💻', title: 'Even Semester B & OPB Exam Scheme May 2026',
       desc: 'Exam Scheme May B & OPB updated 28/04/2026 as BTEUP Portal.',
-      year: '2026', sem: '8', branch: 'all',
+      year: '2026', sem: 'Even', branch: 'all',
       badge: 'trend', dlCount: '3.1k', downloads: 3100,
       link: 'https://drive.google.com/uc?export=download&id=112YsazQiy8avWRTR9EleUa5K9Mvu4wSs',
       color: 'linear-gradient(135deg,#8b5cf6,#06b6d4)'
