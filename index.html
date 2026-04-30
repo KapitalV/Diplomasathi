@@ -74,6 +74,7 @@
     <div class="filter-selects">
       <select id="fYear" class="glass-select" aria-label="Filter by year">
         <option value="">PYQ Year</option>
+        <option value="2025">2025</option>
         <option value="2024">2024</option>
         <option value="2023">2023</option>
         <option value="2022">2022</option>
@@ -81,18 +82,18 @@
       </select>
       <select id="fSem" class="glass-select" aria-label="Filter by semester">
         <option value="">Semester</option>
-        <option value="1">Ist</option><option value="2">IInd</option>
+        <option value="All">All</option> <option value="1">Ist</option><option value="2">IInd</option>
         <option value="3">IIIrd</option><option value="4">IVth</option>
         <option value="5">Vth</option><option value="6">VIth</option>
       </select>
       <select id="fBranch" class="glass-select" aria-label="Filter by branch">
         <option value="">Branch</option>
         <option value="all">All Branches</option>
-        <option value="electrical">Electrical</option>
-        <option value="electronics">Electronics</option>
-        <option value="cs">Computer Science</option>
-        <option value="mechanical">Mechanical</option>
-        <option value="civil">Civil</option>
+        <option value="electrical">Electrical Engg.</option>
+        <option value="electronics">Electronics Engg.</option>
+        <option value="cs">Computer Science Engg.</option>
+        <option value="mechanical">Mechanical Engg.</option>
+        <option value="civil">Civil Engg.</option>
       </select>
       <select id="fSort" class="glass-select" aria-label="Sort by">
         <option value="default">Sort: Default</option>
@@ -410,6 +411,7 @@
             <label class="form-label">Social Badge</label>
             <select class="form-select" id="fBadge">
               <option value="none">None</option>
+             <option value="update">✅ Update</option>
               <option value="trend">🔥 Trending</option>
               <option value="verified">✅ Verified</option>
               <option value="downloads">⬇️ 1.2k Downloads</option>
