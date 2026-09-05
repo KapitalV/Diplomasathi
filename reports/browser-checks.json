@@ -1,0 +1,1208 @@
+{
+  "results": [
+    {
+      "label": "before",
+      "profile": "mobile",
+      "status": "PASS",
+      "errors": [
+        "confetti is not defined",
+        "confetti is not defined"
+      ],
+      "maxObservedEventMs": 72,
+      "note": "Lab event timing on this host, not field INP. Contact success is the existing simulated UI; no delivery backend."
+    },
+    {
+      "label": "before",
+      "profile": "desktop",
+      "status": "PASS",
+      "errors": [
+        "confetti is not defined",
+        "confetti is not defined"
+      ],
+      "maxObservedEventMs": 88,
+      "note": "Lab event timing on this host, not field INP. Contact success is the existing simulated UI; no delivery backend."
+    },
+    {
+      "label": "after",
+      "profile": "mobile",
+      "status": "PASS",
+      "errors": [],
+      "maxObservedEventMs": 104,
+      "note": "Lab event timing on this host, not field INP. Contact success is the existing simulated UI; no delivery backend."
+    },
+    {
+      "label": "after",
+      "profile": "desktop",
+      "status": "PASS",
+      "errors": [],
+      "maxObservedEventMs": 72,
+      "note": "Lab event timing on this host, not field INP. Contact success is the existing simulated UI; no delivery backend."
+    }
+  ],
+  "behaviors": {
+    "before-mobile": {
+      "filters": {
+        "fYear:": [
+          "1",
+          "2",
+          "4",
+          "3",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "fYear:2025": [
+          "1"
+        ],
+        "fYear:2024": [
+          "7"
+        ],
+        "fYear:2023": [
+          "3",
+          "5",
+          "8"
+        ],
+        "fYear:2022": [
+          "6"
+        ],
+        "fYear:2021": [],
+        "fSem:": [
+          "1",
+          "2",
+          "4",
+          "3",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "fSem:All": [
+          "1",
+          "2",
+          "4",
+          "3",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "fSem:1": [
+          "3"
+        ],
+        "fSem:2": [
+          "1",
+          "5",
+          "8"
+        ],
+        "fSem:3": [],
+        "fSem:4": [
+          "6",
+          "7"
+        ],
+        "fSem:5": [],
+        "fSem:6": [],
+        "fSem:even": [
+          "1",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "fSem:odd": [
+          "3"
+        ],
+        "fBranch:": [
+          "1",
+          "2",
+          "4",
+          "3",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "fBranch:all": [
+          "1",
+          "2",
+          "4",
+          "3",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "fBranch:electrical": [
+          "5"
+        ],
+        "fBranch:electronics": [
+          "6"
+        ],
+        "fBranch:cs": [],
+        "fBranch:mechanical": [],
+        "fBranch:civil": [
+          "7"
+        ],
+        "fSort:default": [
+          "1",
+          "2",
+          "4",
+          "3",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "fSort:newest": [
+          "2",
+          "4",
+          "1",
+          "7",
+          "3",
+          "5",
+          "8",
+          "6"
+        ],
+        "fSort:downloads": [
+          "8",
+          "4",
+          "3",
+          "2",
+          "5",
+          "7",
+          "6",
+          "1"
+        ],
+        "fSort:az": [
+          "1",
+          "8",
+          "7",
+          "5",
+          "6",
+          "4",
+          "2",
+          "3"
+        ]
+      },
+      "signatures": {
+        "dark": {
+          ".navbar": {
+            "width": 412,
+            "height": 68,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(10, 14, 30, 0.65)"
+          },
+          ".hero": {
+            "width": 412,
+            "height": 360,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".hero h1": {
+            "width": 285.625,
+            "height": 77.4375,
+            "font": "800 35.2px / 38.72px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".hero-sub": {
+            "width": 376,
+            "height": 53.75,
+            "font": "16.8px / 26.88px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(139, 157, 195)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".controls-wrap": {
+            "width": 412,
+            "height": 253,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".cards-grid": {
+            "width": 380,
+            "height": 3035.859375,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".card": {
+            "width": 380,
+            "height": 359.171875,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(255, 255, 255, 0.04)"
+          },
+          ".card-title": {
+            "width": 338,
+            "height": 22.484375,
+            "font": "700 15.52px / 22.504px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".card-thumb": {
+            "width": 378,
+            "height": 158,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".footer": {
+            "width": 412,
+            "height": 757.9375,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        },
+        "light": {
+          ".navbar": {
+            "width": 412,
+            "height": 68,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(240, 242, 255, 0.8)"
+          },
+          ".hero": {
+            "width": 412,
+            "height": 360,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".hero h1": {
+            "width": 285.625,
+            "height": 77.4375,
+            "font": "800 35.2px / 38.72px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".hero-sub": {
+            "width": 376,
+            "height": 53.75,
+            "font": "16.8px / 26.88px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(74, 82, 117)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".controls-wrap": {
+            "width": 412,
+            "height": 257,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".cards-grid": {
+            "width": 380,
+            "height": 3035.859375,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".card": {
+            "width": 380,
+            "height": 359.171875,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(255, 255, 255, 0.7)"
+          },
+          ".card-title": {
+            "width": 338,
+            "height": 22.484375,
+            "font": "700 15.52px / 22.504px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".card-thumb": {
+            "width": 378,
+            "height": 158,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".footer": {
+            "width": 412,
+            "height": 757.9375,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        }
+      }
+    },
+    "before-desktop": {
+      "filters": {
+        "fYear:": [
+          "1",
+          "2",
+          "4",
+          "3",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "fYear:2025": [
+          "1"
+        ],
+        "fYear:2024": [
+          "7"
+        ],
+        "fYear:2023": [
+          "3",
+          "5",
+          "8"
+        ],
+        "fYear:2022": [
+          "6"
+        ],
+        "fYear:2021": [],
+        "fSem:": [
+          "1",
+          "2",
+          "4",
+          "3",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "fSem:All": [
+          "1",
+          "2",
+          "4",
+          "3",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "fSem:1": [
+          "3"
+        ],
+        "fSem:2": [
+          "1",
+          "5",
+          "8"
+        ],
+        "fSem:3": [],
+        "fSem:4": [
+          "6",
+          "7"
+        ],
+        "fSem:5": [],
+        "fSem:6": [],
+        "fSem:even": [
+          "1",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "fSem:odd": [
+          "3"
+        ],
+        "fBranch:": [
+          "1",
+          "2",
+          "4",
+          "3",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "fBranch:all": [
+          "1",
+          "2",
+          "4",
+          "3",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "fBranch:electrical": [
+          "5"
+        ],
+        "fBranch:electronics": [
+          "6"
+        ],
+        "fBranch:cs": [],
+        "fBranch:mechanical": [],
+        "fBranch:civil": [
+          "7"
+        ],
+        "fSort:default": [
+          "1",
+          "2",
+          "4",
+          "3",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "fSort:newest": [
+          "2",
+          "4",
+          "1",
+          "7",
+          "3",
+          "5",
+          "8",
+          "6"
+        ],
+        "fSort:downloads": [
+          "8",
+          "4",
+          "3",
+          "2",
+          "5",
+          "7",
+          "6",
+          "1"
+        ],
+        "fSort:az": [
+          "1",
+          "8",
+          "7",
+          "5",
+          "6",
+          "4",
+          "2",
+          "3"
+        ]
+      },
+      "signatures": {
+        "dark": {
+          ".navbar": {
+            "width": 1350,
+            "height": 68,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(10, 14, 30, 0.65)"
+          },
+          ".hero": {
+            "width": 1350,
+            "height": 480,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".hero h1": {
+            "width": 545.171875,
+            "height": 147.84375,
+            "font": "800 67.2px / 73.92px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".hero-sub": {
+            "width": 500,
+            "height": 53.75,
+            "font": "16.8px / 26.88px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(139, 157, 195)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".controls-wrap": {
+            "width": 1280,
+            "height": 116,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".cards-grid": {
+            "width": 1224,
+            "height": 1117.515625,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".card": {
+            "width": 394.65625,
+            "height": 359.171875,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(255, 255, 255, 0.04)"
+          },
+          ".card-title": {
+            "width": 352.65625,
+            "height": 22.484375,
+            "font": "700 15.52px / 22.504px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".card-thumb": {
+            "width": 392.65625,
+            "height": 158,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".footer": {
+            "width": 1280,
+            "height": 236.9375,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        },
+        "light": {
+          ".navbar": {
+            "width": 1350,
+            "height": 68,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(240, 242, 255, 0.8)"
+          },
+          ".hero": {
+            "width": 1350,
+            "height": 480,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".hero h1": {
+            "width": 545.171875,
+            "height": 147.84375,
+            "font": "800 67.2px / 73.92px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".hero-sub": {
+            "width": 500,
+            "height": 53.75,
+            "font": "16.8px / 26.88px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(74, 82, 117)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".controls-wrap": {
+            "width": 1280,
+            "height": 116,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".cards-grid": {
+            "width": 1224,
+            "height": 1117.515625,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".card": {
+            "width": 394.65625,
+            "height": 359.171875,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(255, 255, 255, 0.7)"
+          },
+          ".card-title": {
+            "width": 352.65625,
+            "height": 22.484375,
+            "font": "700 15.52px / 22.504px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".card-thumb": {
+            "width": 392.65625,
+            "height": 158,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".footer": {
+            "width": 1280,
+            "height": 236.9375,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        }
+      }
+    },
+    "after-mobile": {
+      "filters": {
+        "fYear:": [
+          "1",
+          "2",
+          "4",
+          "3",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "fYear:2025": [
+          "1"
+        ],
+        "fYear:2024": [
+          "7"
+        ],
+        "fYear:2023": [
+          "3",
+          "5",
+          "8"
+        ],
+        "fYear:2022": [
+          "6"
+        ],
+        "fYear:2021": [],
+        "fSem:": [
+          "1",
+          "2",
+          "4",
+          "3",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "fSem:All": [
+          "1",
+          "2",
+          "4",
+          "3",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "fSem:1": [
+          "3"
+        ],
+        "fSem:2": [
+          "1",
+          "5",
+          "8"
+        ],
+        "fSem:3": [],
+        "fSem:4": [
+          "6",
+          "7"
+        ],
+        "fSem:5": [],
+        "fSem:6": [],
+        "fSem:even": [
+          "1",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "fSem:odd": [
+          "3"
+        ],
+        "fBranch:": [
+          "1",
+          "2",
+          "4",
+          "3",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "fBranch:all": [
+          "1",
+          "2",
+          "4",
+          "3",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "fBranch:electrical": [
+          "5"
+        ],
+        "fBranch:electronics": [
+          "6"
+        ],
+        "fBranch:cs": [],
+        "fBranch:mechanical": [],
+        "fBranch:civil": [
+          "7"
+        ],
+        "fSort:default": [
+          "1",
+          "2",
+          "4",
+          "3",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "fSort:newest": [
+          "2",
+          "4",
+          "1",
+          "7",
+          "3",
+          "5",
+          "8",
+          "6"
+        ],
+        "fSort:downloads": [
+          "8",
+          "4",
+          "3",
+          "2",
+          "5",
+          "7",
+          "6",
+          "1"
+        ],
+        "fSort:az": [
+          "1",
+          "8",
+          "7",
+          "5",
+          "6",
+          "4",
+          "2",
+          "3"
+        ]
+      },
+      "signatures": {
+        "dark": {
+          ".navbar": {
+            "width": 412,
+            "height": 68,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(10, 14, 30, 0.65)"
+          },
+          ".hero": {
+            "width": 412,
+            "height": 360,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".hero h1": {
+            "width": 285.625,
+            "height": 77.4375,
+            "font": "800 35.2px / 38.72px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".hero-sub": {
+            "width": 376,
+            "height": 53.75,
+            "font": "16.8px / 26.88px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(139, 157, 195)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".controls-wrap": {
+            "width": 412,
+            "height": 253,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".cards-grid": {
+            "width": 380,
+            "height": 3035.859375,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".card": {
+            "width": 380,
+            "height": 359.171875,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(255, 255, 255, 0.04)"
+          },
+          ".card-title": {
+            "width": 338,
+            "height": 22.484375,
+            "font": "700 15.52px / 22.504px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".card-thumb": {
+            "width": 378,
+            "height": 158,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".footer": {
+            "width": 412,
+            "height": 757.9375,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        },
+        "light": {
+          ".navbar": {
+            "width": 412,
+            "height": 68,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(240, 242, 255, 0.8)"
+          },
+          ".hero": {
+            "width": 412,
+            "height": 360,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".hero h1": {
+            "width": 285.625,
+            "height": 77.4375,
+            "font": "800 35.2px / 38.72px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".hero-sub": {
+            "width": 376,
+            "height": 53.75,
+            "font": "16.8px / 26.88px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(74, 82, 117)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".controls-wrap": {
+            "width": 412,
+            "height": 257,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".cards-grid": {
+            "width": 380,
+            "height": 3035.859375,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".card": {
+            "width": 380,
+            "height": 359.171875,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(255, 255, 255, 0.7)"
+          },
+          ".card-title": {
+            "width": 338,
+            "height": 22.484375,
+            "font": "700 15.52px / 22.504px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".card-thumb": {
+            "width": 378,
+            "height": 158,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".footer": {
+            "width": 412,
+            "height": 757.9375,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        }
+      }
+    },
+    "after-desktop": {
+      "filters": {
+        "fYear:": [
+          "1",
+          "2",
+          "4",
+          "3",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "fYear:2025": [
+          "1"
+        ],
+        "fYear:2024": [
+          "7"
+        ],
+        "fYear:2023": [
+          "3",
+          "5",
+          "8"
+        ],
+        "fYear:2022": [
+          "6"
+        ],
+        "fYear:2021": [],
+        "fSem:": [
+          "1",
+          "2",
+          "4",
+          "3",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "fSem:All": [
+          "1",
+          "2",
+          "4",
+          "3",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "fSem:1": [
+          "3"
+        ],
+        "fSem:2": [
+          "1",
+          "5",
+          "8"
+        ],
+        "fSem:3": [],
+        "fSem:4": [
+          "6",
+          "7"
+        ],
+        "fSem:5": [],
+        "fSem:6": [],
+        "fSem:even": [
+          "1",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "fSem:odd": [
+          "3"
+        ],
+        "fBranch:": [
+          "1",
+          "2",
+          "4",
+          "3",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "fBranch:all": [
+          "1",
+          "2",
+          "4",
+          "3",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "fBranch:electrical": [
+          "5"
+        ],
+        "fBranch:electronics": [
+          "6"
+        ],
+        "fBranch:cs": [],
+        "fBranch:mechanical": [],
+        "fBranch:civil": [
+          "7"
+        ],
+        "fSort:default": [
+          "1",
+          "2",
+          "4",
+          "3",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "fSort:newest": [
+          "2",
+          "4",
+          "1",
+          "7",
+          "3",
+          "5",
+          "8",
+          "6"
+        ],
+        "fSort:downloads": [
+          "8",
+          "4",
+          "3",
+          "2",
+          "5",
+          "7",
+          "6",
+          "1"
+        ],
+        "fSort:az": [
+          "1",
+          "8",
+          "7",
+          "5",
+          "6",
+          "4",
+          "2",
+          "3"
+        ]
+      },
+      "signatures": {
+        "dark": {
+          ".navbar": {
+            "width": 1350,
+            "height": 68,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(10, 14, 30, 0.65)"
+          },
+          ".hero": {
+            "width": 1350,
+            "height": 480,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".hero h1": {
+            "width": 545.171875,
+            "height": 147.84375,
+            "font": "800 67.2px / 73.92px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".hero-sub": {
+            "width": 500,
+            "height": 53.75,
+            "font": "16.8px / 26.88px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(139, 157, 195)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".controls-wrap": {
+            "width": 1280,
+            "height": 116,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".cards-grid": {
+            "width": 1224,
+            "height": 1117.515625,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".card": {
+            "width": 394.65625,
+            "height": 359.171875,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(255, 255, 255, 0.04)"
+          },
+          ".card-title": {
+            "width": 352.65625,
+            "height": 22.484375,
+            "font": "700 15.52px / 22.504px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".card-thumb": {
+            "width": 392.65625,
+            "height": 158,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".footer": {
+            "width": 1280,
+            "height": 236.9375,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(240, 244, 255)",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        },
+        "light": {
+          ".navbar": {
+            "width": 1350,
+            "height": 68,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(240, 242, 255, 0.8)"
+          },
+          ".hero": {
+            "width": 1350,
+            "height": 480,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".hero h1": {
+            "width": 545.171875,
+            "height": 147.84375,
+            "font": "800 67.2px / 73.92px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".hero-sub": {
+            "width": 500,
+            "height": 53.75,
+            "font": "16.8px / 26.88px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(74, 82, 117)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".controls-wrap": {
+            "width": 1280,
+            "height": 116,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".cards-grid": {
+            "width": 1224,
+            "height": 1117.515625,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".card": {
+            "width": 394.65625,
+            "height": 359.171875,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(255, 255, 255, 0.7)"
+          },
+          ".card-title": {
+            "width": 352.65625,
+            "height": 22.484375,
+            "font": "700 15.52px / 22.504px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".card-thumb": {
+            "width": 392.65625,
+            "height": 158,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(0, 0, 0, 0)"
+          },
+          ".footer": {
+            "width": 1280,
+            "height": 236.9375,
+            "font": "16px \"Plus Jakarta Sans\", sans-serif",
+            "color": "rgb(13, 18, 48)",
+            "background": "rgba(0, 0, 0, 0)"
+          }
+        }
+      }
+    }
+  }
+}

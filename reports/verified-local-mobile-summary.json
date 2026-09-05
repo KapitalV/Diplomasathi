@@ -1,0 +1,15 @@
+{
+  "url": "http://127.0.0.1:4175",
+  "profile": "mobile",
+  "lighthouseVersion": "13.4.1",
+  "fetched": "2026-09-05T23:42:07.309Z",
+  "performance": 100,
+  "lcpMs": 1064.49325,
+  "cls": 0,
+  "inpMs": null,
+  "inpNote": "Navigation Lighthouse does not measure field INP.",
+  "tbtMs": 19.002250000000004,
+  "transferredBytes": 62076,
+  "requestCount": 6,
+  "warnings": []
+}

@@ -99,17 +99,29 @@
   const branchLabel = b => BRANCH_LABELS[b] || b;
 
   /* ─────────────────────────────────────────
-     BRANCH THUMBNAIL IMAGES (Unsplash CDN)
+     BRANCH THUMBNAIL IMAGES (versioned local copies; see assets/sources.json)
   ───────────────────────────────────────── */
   const BRANCH_IMAGES = {
-    electrical:  'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=75',
-    electronics: 'https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=600&q=75',
-    cs:          'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&q=75',
-    mechanical:  'https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?w=600&q=75',
-    civil:       'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=75',
-    all:         'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&q=75',
+    electrical:  '/assets/images/photo-1518770660439-4636190af475.f04e6a39af9f.webp',
+    electronics: '/assets/images/photo-1587620962725-abab7fe55159.e10cb42d3719.webp',
+    cs:          '/assets/images/photo-1517694712202-14dd9538aa97.7bdb807a5825.webp',
+    mechanical:  '/assets/images/photo-1537462715879-360eeb61a0ad.a705832a0c22.webp',
+    civil:       '/assets/images/photo-1504307651254-35680f356dfd.9a1961ea6c26.webp',
+    all:         '/assets/images/photo-1456513080510-7bf3a84b82f8.8a6a0fbc0573.webp',
   };
   const getBranchImg = branch => BRANCH_IMAGES[branch] || BRANCH_IMAGES.all;
+
+  // Native lazy loading may fetch images thousands of pixels below the fold.
+  // A bounded look-ahead keeps distant photos off the initial network queue.
+  const thumbnailObserver = 'IntersectionObserver' in window
+    ? new IntersectionObserver(entries => {
+        entries.forEach(({ target, isIntersecting }) => {
+          if (!isIntersecting) return;
+          target.src = target.dataset.src;
+          thumbnailObserver.unobserve(target);
+        });
+      }, { rootMargin: '600px 0px' })
+    : null;
 
   /* ─────────────────────────────────────────
      CARD RENDERER — Dynamic .map()
@@ -131,11 +143,7 @@
 
     card.innerHTML = `
       <div class="card-thumb">
-        <div class="card-thumb-bg" style="
-          background-image: url('${bgImg}');
-          background-size: cover;
-          background-position: center;
-        "></div>
+        <img class="card-thumb-bg" data-src="${bgImg}" alt="" loading="lazy" decoding="async"/>
         <div class="card-thumb-overlay" style="background:${escHtml(m.color)}; position:absolute; inset:0; opacity:0.78;"></div>
         <div class="card-thumb-icon" aria-hidden="true">${escHtml(m.icon)}</div>
         <div class="card-thumb-badges" aria-hidden="true">
@@ -207,8 +215,15 @@
     const meta  = $('resultsMeta');
     const list  = getFilteredSorted();
 
-    grid.innerHTML = '';
-    list.forEach((m, i) => grid.appendChild(buildCard(m, i)));
+    // Replace once; disconnect detached images after search/filter/admin edits.
+    if (thumbnailObserver) thumbnailObserver.disconnect();
+    const cards = document.createDocumentFragment();
+    list.forEach((m, i) => cards.appendChild(buildCard(m, i)));
+    grid.replaceChildren(cards);
+    grid.querySelectorAll('.card-thumb-bg').forEach(img => {
+      if (thumbnailObserver) thumbnailObserver.observe(img);
+      else img.src = img.dataset.src;
+    });
 
     empty.style.display = list.length === 0 ? 'block' : 'none';
     meta.innerHTML = list.length > 0
@@ -242,27 +257,14 @@
   });
 
   /* ─────────────────────────────────────────
-     DOWNLOAD + CONFETTI FX
+     DOWNLOAD
   ───────────────────────────────────────── */
   function handleDownload(link, btn) {
     // Open download
     window.open(link, '_blank', 'noopener');
 
-    // Confetti burst
-    const rect = btn.getBoundingClientRect();
-    const x = (rect.left + rect.width / 2) / window.innerWidth;
-    const y = (rect.top  + rect.height/ 2) / window.innerHeight;
-
-    confetti({
-      particleCount: 80,
-      spread: 60,
-      origin: { x, y },
-      colors: ['#00d4ff','#6366f1','#8b5cf6','#10b981','#f59e0b','#ffffff'],
-      scalar: 0.9,
-      ticks: 200,
-      startVelocity: 28,
-      gravity: 0.85
-    });
+    // The former confetti call referenced an unloaded library and threw on every
+    // download. Keep the existing download flow without that broken effect.
   }
 
   /* ─────────────────────────────────────────
@@ -625,12 +627,8 @@
   /* ─────────────────────────────────────────
      INIT
   ───────────────────────────────────────── */
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      $('skelGrid').style.display = 'none';
-      $('cardsGrid').style.visibility = '';
-      renderCards();
-    }, 650);
-  });
+  // Deferred script: the DOM is already parsed. Render before DOMContentLoaded
+  // without waiting for fonts, images, analytics, or an artificial timer.
+  renderCards();
 
 })();

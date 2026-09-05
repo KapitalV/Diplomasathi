@@ -1,0 +1,15 @@
+{
+  "url": "https://diplomasathi.live",
+  "profile": "desktop",
+  "lighthouseVersion": "13.4.1",
+  "fetched": "2026-09-05T23:36:57.291Z",
+  "performance": 85,
+  "lcpMs": 1934.0585999999998,
+  "cls": 0.004160537532000833,
+  "inpMs": null,
+  "inpNote": "Navigation Lighthouse does not measure field INP.",
+  "tbtMs": 63,
+  "transferredBytes": 449272,
+  "requestCount": 12,
+  "warnings": []
+}
